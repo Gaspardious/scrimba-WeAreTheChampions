@@ -39,7 +39,7 @@ onValue(endorsementListInDB, function(snapshot) {
             addEndorsementToList(currentID, currentValue)
         }
     } else {
-        endorsementList.innerHTML = "nothing here for you now dawg..."
+        endorsementList.innerHTML = "No endorsements here... add one above!"
     }
 })
 
