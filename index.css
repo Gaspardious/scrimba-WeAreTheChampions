@@ -1,14 +1,15 @@
 html, body {
     margin: 0;
     padding: 0;
+
 }
 
 #container {
     margin: 0 auto;
     background-color: rgba(27, 25, 36, 1);
     color: white;
-    width: 320px;
-    height: 700px;
+    max-width: 320px;
+    min-height: 700px;
     padding: 20px;
     text-align: center;
 }
@@ -29,6 +30,7 @@ html, body {
     border: none;
     background-color: rgba(68, 64, 89, 1);
     color: rgba(143, 143, 143, 1);
+    font-size: 16px;
 
 }
 

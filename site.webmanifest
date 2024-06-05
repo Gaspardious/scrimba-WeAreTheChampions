@@ -1,0 +1,9 @@
+{
+    "name": "Scrima Champions App",
+    "short_name": "Champions",
+    "description": "A small Scrima project",
+    "display": "standalone",
+    "background_color": "#1C1924",
+    "theme_color": "#1C1924"
+  }
+  
