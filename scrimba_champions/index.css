@@ -1,0 +1,59 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    margin: 0 auto;
+    background-color: rgba(27, 25, 36, 1);
+    color: white;
+    width: 320px;
+    height: 700px;
+    padding: 20px;
+    text-align: center;
+}
+
+#image {
+    width: 90px;
+}
+
+
+#inputFromTo {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 7px;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+#endorsement_input {
+    width: 317px;
+    height: 118px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(68, 64, 89, 1);
+    color: rgba(143, 143, 143, 1);
+}
+
+.inputFromTo {
+   width: 153.85px;
+   height: 40px;
+   border-radius: 8px;
+   border: none;
+   background-color: rgba(68, 64, 89, 1);
+   color: rgba(143, 143, 143, 1);
+}
+
+button {
+    width: 317px;
+    height: 61px;
+    background-color: rgba(40, 169, 241, 1);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
