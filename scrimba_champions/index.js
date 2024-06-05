@@ -13,9 +13,6 @@ const inputFieldEl = document.getElementById("endorsement_input")
 const btn = document.getElementById("btn")
 const endorsementList = document.getElementById("endorsements")
 
-const newEndorsement = document.createElement("li")
-
-
 // Pushar up to db
 btn.addEventListener("click", function() {
     let newInput = inputFieldEl.value //get value from inputfield
@@ -25,38 +22,46 @@ btn.addEventListener("click", function() {
     console.log(`"${newInput}" pushed to database`)
 })
 
-
 onValue(endorsementListInDB, function(snapshot) {
-if (snapshot.exists()) {
+    if (snapshot.exists()) {
+        let itemArray = Object.entries(snapshot.val())
+        
+        clearEndorsementList()
 
+        for (let i = 0; i < itemArray.length; i++) {
+            let currentItem = itemArray[i]
+            let currentID = currentItem[0]
+            let currentValue = currentItem[1] 
 
-}
+            console.log(currentID)
 
+            // skicka in till lista här med ny funktion
+            addEndorsementToList(currentID, currentValue)
+        }
+    } else {
+        endorsementList.innerHTML = "nothing here for you now dawg..."
+    }
 })
 
+function addEndorsementToList(itemID, itemValue) {
+    let newEndorsement = document.createElement("li")
 
+    newEndorsement.textContent = itemValue
+    
+    newEndorsement.addEventListener("click", function() {
+        let exactLocationOfItemInDB = ref(database, `endorsements/${itemID}`)
 
+        console.log("clicked")
+        remove(exactLocationOfItemInDB)
+    })
 
+    endorsementList.append(newEndorsement)
+}
 
-
-
-
-// function to clear inputfield
-function clearInputField (){
+function clearInputField() {
     inputFieldEl.value = ""
 }
 
-
-
-
-
-function addEndorsementToList (){
-
-    newEndorsement.addEventListener("click", function(){
-
-
-    })
-
-
+function clearEndorsementList() {
+    endorsementList.innerHTML = ""
 }
-
